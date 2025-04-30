@@ -3,40 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|c:\\users\\snake\\desktop\\net core\\apikirbbo\\apikirbbo\\controllers\\compracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|solutionrelative:apikirbbo\\controllers\\compracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|c:\\users\\snake\\desktop\\net core\\apikirbbo\\apikirbbo\\repositories\\comprarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|solutionrelative:apikirbbo\\repositories\\comprarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|c:\\users\\snake\\desktop\\net core\\apikirbbo\\apikirbbo\\dtos\\comprarequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|solutionrelative:apikirbbo\\dtos\\comprarequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|c:\\users\\snake\\desktop\\net core\\apikirbbo\\apikirbbo\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|solutionrelative:apikirbbo\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|c:\\users\\snake\\desktop\\net core\\apikirbbo\\apikirbbo\\controllers\\imagencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|solutionrelative:apikirbbo\\controllers\\imagencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|c:\\users\\snake\\desktop\\net core\\apikirbbo\\apikirbbo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|solutionrelative:apikirbbo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|c:\\users\\snake\\desktop\\net core\\apikirbbo\\apikirbbo\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|solutionrelative:apikirbbo\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|c:\\users\\snake\\desktop\\net core\\apikirbbo\\apikirbbo\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|solutionrelative:apikirbbo\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|c:\\users\\snake\\desktop\\net core\\apikirbbo\\apikirbbo\\services\\productoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|solutionrelative:apikirbbo\\services\\productoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|c:\\users\\snake\\desktop\\net core\\apikirbbo\\apikirbbo\\repositories\\productorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|solutionrelative:apikirbbo\\repositories\\productorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|c:\\users\\snake\\desktop\\net core\\apikirbbo\\apikirbbo\\apikirbbo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{EC550984-6BFE-4186-8948-961722F62803}|apikirbbo\\apikirbbo.csproj|solutionrelative:apikirbbo\\apikirbbo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,8 +22,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ImagenController.cs",
+              "DocumentMoniker": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Controllers\\ImagenController.cs",
+              "RelativeDocumentMoniker": "apikirbbo\\Controllers\\ImagenController.cs",
+              "ToolTip": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Controllers\\ImagenController.cs",
+              "RelativeToolTip": "apikirbbo\\Controllers\\ImagenController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T04:36:24.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Program.cs",
+              "RelativeDocumentMoniker": "apikirbbo\\Program.cs",
+              "ToolTip": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Program.cs",
+              "RelativeToolTip": "apikirbbo\\Program.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T04:09:48.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "apikirbbo",
+              "DocumentMoniker": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\apikirbbo.csproj",
+              "RelativeDocumentMoniker": "apikirbbo\\apikirbbo.csproj",
+              "ToolTip": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\apikirbbo.csproj",
+              "RelativeToolTip": "apikirbbo\\apikirbbo.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-30T04:05:40.069Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -55,118 +70,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CompraRepository.cs",
-              "DocumentMoniker": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Repositories\\CompraRepository.cs",
-              "RelativeDocumentMoniker": "apikirbbo\\Repositories\\CompraRepository.cs",
-              "ToolTip": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Repositories\\CompraRepository.cs",
-              "RelativeToolTip": "apikirbbo\\Repositories\\CompraRepository.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwDkAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T07:46:02.364Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CompraRequest.cs",
-              "DocumentMoniker": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\DTOs\\CompraRequest.cs",
-              "RelativeDocumentMoniker": "apikirbbo\\DTOs\\CompraRequest.cs",
-              "ToolTip": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\DTOs\\CompraRequest.cs",
-              "RelativeToolTip": "apikirbbo\\DTOs\\CompraRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T07:45:12.869Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CompraController.cs",
-              "DocumentMoniker": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Controllers\\CompraController.cs",
-              "RelativeDocumentMoniker": "apikirbbo\\Controllers\\CompraController.cs",
-              "ToolTip": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Controllers\\CompraController.cs",
-              "RelativeToolTip": "apikirbbo\\Controllers\\CompraController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAzwCwAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T07:44:35.715Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "apikirbbo\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "apikirbbo\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAA1wCIAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T06:51:18.831Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Producto.cs",
-              "DocumentMoniker": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Models\\Producto.cs",
-              "RelativeDocumentMoniker": "apikirbbo\\Models\\Producto.cs",
-              "ToolTip": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Models\\Producto.cs",
-              "RelativeToolTip": "apikirbbo\\Models\\Producto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T06:06:39.797Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Program.cs",
-              "RelativeDocumentMoniker": "apikirbbo\\Program.cs",
-              "ToolTip": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Program.cs",
-              "RelativeToolTip": "apikirbbo\\Program.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T05:27:37.509Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProductoService.cs",
-              "DocumentMoniker": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Services\\ProductoService.cs",
-              "RelativeDocumentMoniker": "apikirbbo\\Services\\ProductoService.cs",
-              "ToolTip": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Services\\ProductoService.cs",
-              "RelativeToolTip": "apikirbbo\\Services\\ProductoService.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwD0AAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T04:26:36.6Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProductoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Repositories\\ProductoRepository.cs",
-              "RelativeDocumentMoniker": "apikirbbo\\Repositories\\ProductoRepository.cs",
-              "ToolTip": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Repositories\\ProductoRepository.cs",
-              "RelativeToolTip": "apikirbbo\\Repositories\\ProductoRepository.cs",
-              "ViewState": "AgIAACoBAAAAAAAAAAAAwE4BAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T04:24:48.12Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProductoController.cs",
-              "DocumentMoniker": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Controllers\\ProductoController.cs",
-              "RelativeDocumentMoniker": "apikirbbo\\Controllers\\ProductoController.cs",
-              "ToolTip": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\Controllers\\ProductoController.cs",
-              "RelativeToolTip": "apikirbbo\\Controllers\\ProductoController.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAYwAcAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T04:24:32.674Z"
             }
           ]
         }

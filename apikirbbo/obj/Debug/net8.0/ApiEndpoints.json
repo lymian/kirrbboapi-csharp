@@ -160,6 +160,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "apikirbbo.Controllers.ImagenController",
+    "Method": "SubirImagen",
+    "RelativePath": "kirbbo/imagen/subir-imagen",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "imagen",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "productoId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "apikirbbo.Controllers.ProductoController",
     "Method": "ObtenerProductos",
     "RelativePath": "kirbbo/productos",

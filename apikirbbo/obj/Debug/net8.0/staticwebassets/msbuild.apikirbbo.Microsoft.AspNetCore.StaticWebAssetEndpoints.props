@@ -1,0 +1,16 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/apikirbbo/uploads/1.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\1.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Vb\u002BMVNQXylZ4DQHnPbggn5kNGFsFCHUDFzg2yVSY5z0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"228736"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022Vb\u002BMVNQXylZ4DQHnPbggn5kNGFsFCHUDFzg2yVSY5z0=\u0022"},{"Name":"Last-Modified","Value":"Fri, 04 Oct 2024 16:49:22 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/apikirbbo/uploads/1.xh997kbt79.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\1.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"xh997kbt79"},{"Name":"integrity","Value":"sha256-Vb\u002BMVNQXylZ4DQHnPbggn5kNGFsFCHUDFzg2yVSY5z0="},{"Name":"label","Value":"_content/apikirbbo/uploads/1.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"228736"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022Vb\u002BMVNQXylZ4DQHnPbggn5kNGFsFCHUDFzg2yVSY5z0=\u0022"},{"Name":"Last-Modified","Value":"Fri, 04 Oct 2024 16:49:22 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

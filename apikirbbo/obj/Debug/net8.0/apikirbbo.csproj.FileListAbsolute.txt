@@ -81,3 +81,5 @@ C:\Users\snake\Desktop\net core\apikirbbo\apikirbbo\obj\Debug\net8.0\refint\apik
 C:\Users\snake\Desktop\net core\apikirbbo\apikirbbo\obj\Debug\net8.0\apikirbbo.pdb
 C:\Users\snake\Desktop\net core\apikirbbo\apikirbbo\obj\Debug\net8.0\apikirbbo.genruntimeconfig.cache
 C:\Users\snake\Desktop\net core\apikirbbo\apikirbbo\obj\Debug\net8.0\ref\apikirbbo.dll
+C:\Users\snake\Desktop\net core\apikirbbo\apikirbbo\obj\Debug\net8.0\apikirbbo.sourcelink.json
+C:\Users\snake\Desktop\net core\apikirbbo\apikirbbo\bin\Debug\net8.0\apikirbbo.staticwebassets.runtime.json

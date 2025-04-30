@@ -1,12 +1,125 @@
 {
   "Version": 1,
-  "Hash": "CULzXlE28ng8GbqIUqJ4WiVe4X0UgMYOdf6cQ4IIVZ0=",
+  "Hash": "+Xm1EfYo1aselYgeEhxMnNXku3rpvy7ZsBgvlsVyss4=",
   "Source": "apikirbbo",
   "BasePath": "_content/apikirbbo",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "apikirbbo\\wwwroot",
+      "Source": "apikirbbo",
+      "ContentRoot": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\wwwroot\\",
+      "BasePath": "_content/apikirbbo",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\wwwroot\\uploads\\1.png",
+      "SourceId": "apikirbbo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\wwwroot\\",
+      "BasePath": "_content/apikirbbo",
+      "RelativePath": "uploads/1#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xh997kbt79",
+      "Integrity": "Vb+MVNQXylZ4DQHnPbggn5kNGFsFCHUDFzg2yVSY5z0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\1.png"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "uploads/1.png",
+      "AssetFile": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\wwwroot\\uploads\\1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "228736"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Vb+MVNQXylZ4DQHnPbggn5kNGFsFCHUDFzg2yVSY5z0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Oct 2024 16:49:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Vb+MVNQXylZ4DQHnPbggn5kNGFsFCHUDFzg2yVSY5z0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/1.xh997kbt79.png",
+      "AssetFile": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\wwwroot\\uploads\\1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "228736"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Vb+MVNQXylZ4DQHnPbggn5kNGFsFCHUDFzg2yVSY5z0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Oct 2024 16:49:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xh997kbt79"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/1.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Vb+MVNQXylZ4DQHnPbggn5kNGFsFCHUDFzg2yVSY5z0="
+        }
+      ]
+    }
+  ]
 }

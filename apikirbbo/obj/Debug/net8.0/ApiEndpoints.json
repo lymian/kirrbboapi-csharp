@@ -62,6 +62,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "apikirbbo.Controllers.AuthController",
+    "Method": "ObtenerRol",
+    "RelativePath": "kirbbo/auth/rol",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "apikirbbo.Controllers.CategoriaController",
     "Method": "ObtenerCategorias",
     "RelativePath": "kirbbo/categorias",

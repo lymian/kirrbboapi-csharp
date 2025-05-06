@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using apikirbbo.DTOs;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace apikirbbo.Controllers
 {
@@ -40,6 +42,18 @@ namespace apikirbbo.Controllers
                 return BadRequest(new { mensaje });
 
             return Ok(new { mensaje });
+        }
+        //retornar rol
+        [HttpGet("rol")]
+        [Authorize]
+        public IActionResult ObtenerRol()
+        {
+            var rol = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+            if (rol == null)
+            {
+                return NotFound(new { mensaje = "Rol no encontrado" });
+            }
+            return Ok(new { rol });
         }
     }
 }

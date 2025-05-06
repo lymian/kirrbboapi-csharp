@@ -1,5 +1,6 @@
 ﻿using apikirbbo.DTOs;
 using apikirbbo.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,6 +33,7 @@ namespace apikirbbo.Controllers
         }
 
         [HttpPost("guardar")]
+        [Authorize(Roles = "ADMIN")]
         public IActionResult AgregarProducto([FromBody] ProductoMergeDTO productoMergeDTO)
         {
             var producto = _productoService.AgregarProducto(productoMergeDTO);
@@ -43,6 +45,7 @@ namespace apikirbbo.Controllers
         }
 
         [HttpPut("actualizar/{id}")]
+        [Authorize(Roles = "ADMIN")]
         public IActionResult ActualizarProducto([FromBody] ProductoMergeDTO productoMergeDTO, int id)
         {
             var producto = _productoService.ActualizarProducto(productoMergeDTO, id);
@@ -52,7 +55,9 @@ namespace apikirbbo.Controllers
             }
             return Ok(producto);
         }
+
         [HttpDelete("eliminar/{id}")]
+        [Authorize(Roles = "ADMIN")]
         public IActionResult EliminarProducto(int id)
         {
             var mensaje = _productoService.EliminarProducto(id);
@@ -63,6 +68,7 @@ namespace apikirbbo.Controllers
             return Ok(new { mensaje });
         }
         [HttpPut("estado/{id}")]
+        [Authorize(Roles = "ADMIN")]
         public IActionResult AlternarEstado(int id)
         {
             var producto = _productoService.AlternarEstado(id);

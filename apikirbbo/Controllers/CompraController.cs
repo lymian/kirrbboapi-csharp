@@ -42,7 +42,7 @@ namespace apikirbbo.Controllers
             }
 
             var result = _compraRepository.ProcesarCompra(request, cliente.Id);
-            if (result == "Compra realziada con éxito")
+            if (result == "Compra realizada con éxito")
             {
                 Console.WriteLine("Compra realizada con éxito");
                 return Ok(new { result });

@@ -47,6 +47,7 @@ namespace apikirbbo.Repositories
                         productos.Add(producto);
                     }
                     reader.Close();
+                    connection.Close();
                 }
             }
             catch (Exception e)
@@ -81,6 +82,7 @@ namespace apikirbbo.Repositories
                         };
                     }
                     reader.Close();
+                    connection.Close();
                 }
             }
             catch (Exception e)
@@ -161,6 +163,8 @@ namespace apikirbbo.Repositories
                         Categoria = _categoriaRepository.ObtenerCategoriaPorId(reader.GetInt32(6))
                     };
                 }
+                reader.Close();
+                connection.Close();
             }
             catch (Exception ex)
             {
@@ -180,6 +184,7 @@ namespace apikirbbo.Repositories
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Id", id);
                 command.ExecuteNonQuery();
+                connection.Close();
             }
             catch (Exception ex)
             {
@@ -249,6 +254,7 @@ namespace apikirbbo.Repositories
                         productos.Add(producto);
                     }
                     reader.Close();
+                    connection.Close();
                 }
             }
             catch (Exception e)
@@ -321,6 +327,7 @@ namespace apikirbbo.Repositories
                         productos.Add(producto);
                     }
                     reader.Close();
+                    connection.Close();
                 }
             }
             catch (Exception e)

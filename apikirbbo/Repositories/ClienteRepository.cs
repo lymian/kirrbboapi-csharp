@@ -42,6 +42,7 @@ namespace apikirbbo.Repositories
                         };
                     }
                     reader.Close();
+                    connection.Close();
                 }
             }
             catch (Exception e)
@@ -75,6 +76,7 @@ namespace apikirbbo.Repositories
                         clientes.Add(cliente);
                     }
                     reader.Close();
+                    connection.Close();
                 }
             }
             catch (Exception e)
@@ -107,6 +109,7 @@ namespace apikirbbo.Repositories
                         };
                     }
                     reader.Close();
+                    connection.Close();
                 }
             }
             catch (Exception e)

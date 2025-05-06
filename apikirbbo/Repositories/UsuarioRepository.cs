@@ -37,6 +37,7 @@ namespace apikirbbo.Repositories
                     Estado = reader.GetBoolean(reader.GetOrdinal("Estado"))
                 };
             }
+            connection.Close();
 
             return null;
         }
@@ -51,6 +52,7 @@ namespace apikirbbo.Repositories
             command.Parameters.AddWithValue("@Username", username);
 
             var count = (int)await command.ExecuteScalarAsync();
+            connection.Close();
             return count > 0;
         }
 
@@ -69,6 +71,7 @@ namespace apikirbbo.Repositories
             command.Parameters.AddWithValue("@Estado", usuario.Estado);
 
             await command.ExecuteNonQueryAsync();
+            connection.Close();
         }
     }
 }

@@ -18,13 +18,15 @@ namespace apikirbbo.Repositories
         }
         public string ProcesarCompra(CompraRequest request, int idCliente)
         {
+            if (request.Detalles == null || !request.Detalles.Any())
+                return "La lista de detalles de la compra está vacía.";
+
             using var connection = new SqlConnection(_connectionString);
             connection.Open();
             using var transaction = connection.BeginTransaction();
 
             try
             {
-                // 1. Validar productos, stock y calcular totales
                 decimal total = 0;
                 var detallesCalculados = new List<(CompraDetalleDTO item, decimal precioUnitario, decimal subtotal)>();
 
@@ -45,30 +47,32 @@ namespace apikirbbo.Repositories
                     if (item.Cantidad > stock)
                         return "Stock insuficiente para el producto " + item.ProductoId;
 
-                    var precioFinal = precio - descuento;
+                    var precioFinal = precio - ((precio * descuento)/100);
                     var subtotal = precioFinal * item.Cantidad;
                     total += subtotal;
 
                     detallesCalculados.Add((item, precioFinal, subtotal));
                 }
 
-                // 2. Insertar Boleta y obtener Id
                 var cmdBoleta = new SqlCommand(@"
-            INSERT INTO Boleta (ClienteId, FechaEmision, Total) 
-            VALUES (@ClienteId, GETDATE(), @Total);
-            SELECT CAST(SCOPE_IDENTITY() AS INT);", connection, transaction);
+        INSERT INTO Boleta (ClienteId, FechaEmision, Total, Direccion) 
+        VALUES (@ClienteId, GETDATE(), @Total, @Direccion);
+        SELECT CAST(SCOPE_IDENTITY() AS INT);", connection, transaction);
 
                 cmdBoleta.Parameters.AddWithValue("@ClienteId", idCliente);
                 cmdBoleta.Parameters.AddWithValue("@Total", total);
+                cmdBoleta.Parameters.AddWithValue("@Direccion", request.Direccion);
 
-                int boletaId = (int)cmdBoleta.ExecuteScalar();
+                var result = cmdBoleta.ExecuteScalar();
+                if (result == null)
+                    throw new InvalidOperationException("No se pudo generar el ID de la boleta.");
+                int boletaId = (int)result;
 
-                // 3. Insertar DetalleBoleta y actualizar stock
                 foreach (var (item, precioUnitario, subtotal) in detallesCalculados)
                 {
                     var cmdDetalle = new SqlCommand(@"
-                INSERT INTO DetalleBoleta (BoletaId, ProductoId, Cantidad, PrecioUnitario, Subtotal) 
-                VALUES (@BoletaId, @ProductoId, @Cantidad, @PrecioUnitario, @Subtotal);", connection, transaction);
+            INSERT INTO DetalleBoleta (BoletaId, ProductoId, Cantidad, PrecioUnitario, Subtotal) 
+            VALUES (@BoletaId, @ProductoId, @Cantidad, @PrecioUnitario, @Subtotal);", connection, transaction);
 
                     cmdDetalle.Parameters.AddWithValue("@BoletaId", boletaId);
                     cmdDetalle.Parameters.AddWithValue("@ProductoId", item.ProductoId);
@@ -78,9 +82,9 @@ namespace apikirbbo.Repositories
                     cmdDetalle.ExecuteNonQuery();
 
                     var cmdStock = new SqlCommand(@"
-                UPDATE Producto 
-                SET Stock = Stock - @Cantidad 
-                WHERE Id = @ProductoId;", connection, transaction);
+            UPDATE Producto 
+            SET Stock = Stock - @Cantidad 
+            WHERE Id = @ProductoId;", connection, transaction);
 
                     cmdStock.Parameters.AddWithValue("@Cantidad", item.Cantidad);
                     cmdStock.Parameters.AddWithValue("@ProductoId", item.ProductoId);
@@ -88,13 +92,15 @@ namespace apikirbbo.Repositories
                 }
 
                 transaction.Commit();
-                return "Compra realziada con éxito";
+                connection.Close();
+                return "Compra realizada con éxito";
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error al procesar la compra: {ex.Message}");
                 transaction.Rollback();
-                return "Compra realziada con éxito";
+                connection.Close();
+                return "Error al procesar la compra. Intente nuevamente.";
             }
         }
         public List<HistorialCompraDTO> ObtenerHistorialDeCompras(int clienteId)
@@ -114,7 +120,9 @@ namespace apikirbbo.Repositories
             d.Cantidad,
             d.PrecioUnitario,
             d.Subtotal,
-            p.Nombre AS NombreProducto
+            p.Nombre AS NombreProducto,
+            b.Direccion,
+            b.Estado
         FROM Boleta b
         INNER JOIN DetalleBoleta d ON b.Id = d.BoletaId
         INNER JOIN Producto p ON d.ProductoId = p.Id
@@ -142,7 +150,9 @@ namespace apikirbbo.Repositories
                         FechaEmision = reader.GetDateTime(1),
                         NombreCliente = reader.GetString(2),
                         ApellidoCliente = reader.GetString(3),
-                        Total = reader.GetDecimal(4)
+                        Total = reader.GetDecimal(4),
+                        Direccion = reader.GetString(9),
+                        Estado = reader.GetInt32(10)
                     };
                     historial.Add(boletaActual);
                     boletaIdAnterior = boletaId;
@@ -158,6 +168,7 @@ namespace apikirbbo.Repositories
 
                 boletaActual?.Detalles.Add(detalle);
             }
+            connection.Close();
 
             return historial;
         }
@@ -179,7 +190,9 @@ namespace apikirbbo.Repositories
             d.Cantidad,
             d.PrecioUnitario,
             d.Subtotal,
-            p.Nombre AS NombreProducto
+            p.Nombre AS NombreProducto,
+            b.Direccion,
+            b.Estado
         FROM Boleta b
         INNER JOIN DetalleBoleta d ON b.Id = d.BoletaId
         INNER JOIN Producto p ON d.ProductoId = p.Id
@@ -204,7 +217,9 @@ namespace apikirbbo.Repositories
                         FechaEmision = reader.GetDateTime(1),
                         NombreCliente = reader.GetString(2),
                         ApellidoCliente = reader.GetString(3),
-                        Total = reader.GetDecimal(4)
+                        Total = reader.GetDecimal(4),
+                        Direccion = reader.GetString(9),
+                        Estado = reader.GetInt32(10)
                     };
                     historial.Add(boletaActual);
                     boletaIdAnterior = boletaId;
@@ -221,6 +236,124 @@ namespace apikirbbo.Repositories
                 boletaActual?.Detalles.Add(detalle);
             }
 
+            connection.Close();
+            return historial;
+        }
+        // listar compras con estado 0
+        public List<HistorialCompraDTO> ObtenerComprasPendientes()
+        {
+            var historial = new List<HistorialCompraDTO>();
+            using var connection = new SqlConnection(_connectionString);
+            connection.Open();
+            var query = @"
+        SELECT
+            b.Id AS BoletaId,
+            b.FechaEmision,
+            c.Nombre,
+            c.Apellido,
+            b.Total,
+            d.Cantidad,
+            d.PrecioUnitario,
+            d.Subtotal,
+            p.Nombre AS NombreProducto,
+            b.Direccion,
+            b.Estado
+        FROM Boleta b
+        INNER JOIN DetalleBoleta d ON b.Id = d.BoletaId
+        INNER JOIN Producto p ON d.ProductoId = p.Id
+        INNER JOIN Cliente c ON b.ClienteId = c.Id
+        WHERE b.Estado = 0
+        ORDER BY b.FechaEmision DESC";
+            using var command = new SqlCommand(query, connection);
+            using var reader = command.ExecuteReader();
+            HistorialCompraDTO? boletaActual = null;
+            int boletaIdAnterior = -1;
+            while (reader.Read())
+            {
+                int boletaId = reader.GetInt32(0);
+                if (boletaId != boletaIdAnterior)
+                {
+                    boletaActual = new HistorialCompraDTO
+                    {
+                        BoletaId = boletaId,
+                        FechaEmision = reader.GetDateTime(1),
+                        NombreCliente = reader.GetString(2),
+                        ApellidoCliente = reader.GetString(3),
+                        Total = reader.GetDecimal(4),
+                        Direccion = reader.GetString(9),
+                        Estado = reader.GetInt32(10)
+                    };
+                    historial.Add(boletaActual);
+                    boletaIdAnterior = boletaId;
+                }
+                var detalle = new DetalleCompraDTO
+                {
+                    Cantidad = reader.GetInt32(5),
+                    PrecioUnitario = reader.GetDecimal(6),
+                    Subtotal = reader.GetDecimal(7),
+                    NombreProducto = reader.GetString(8)
+                };
+                boletaActual?.Detalles.Add(detalle);
+            }
+            connection.Close();
+            return historial;
+        }
+        public List<HistorialCompraDTO> ObtenerComprasCompletadas()
+        {
+            var historial = new List<HistorialCompraDTO>();
+            using var connection = new SqlConnection(_connectionString);
+            connection.Open();
+            var query = @"
+        SELECT
+            b.Id AS BoletaId,
+            b.FechaEmision,
+            c.Nombre,
+            c.Apellido,
+            b.Total,
+            d.Cantidad,
+            d.PrecioUnitario,
+            d.Subtotal,
+            p.Nombre AS NombreProducto,
+            b.Direccion,
+            b.Estado
+        FROM Boleta b
+        INNER JOIN DetalleBoleta d ON b.Id = d.BoletaId
+        INNER JOIN Producto p ON d.ProductoId = p.Id
+        INNER JOIN Cliente c ON b.ClienteId = c.Id
+        WHERE b.Estado = 1
+        ORDER BY b.FechaEmision DESC";
+            using var command = new SqlCommand(query, connection);
+            using var reader = command.ExecuteReader();
+            HistorialCompraDTO? boletaActual = null;
+            int boletaIdAnterior = -1;
+            while (reader.Read())
+            {
+                int boletaId = reader.GetInt32(0);
+                if (boletaId != boletaIdAnterior)
+                {
+                    boletaActual = new HistorialCompraDTO
+                    {
+                        BoletaId = boletaId,
+                        FechaEmision = reader.GetDateTime(1),
+                        NombreCliente = reader.GetString(2),
+                        ApellidoCliente = reader.GetString(3),
+                        Total = reader.GetDecimal(4),
+                        Direccion = reader.GetString(9),
+                        Estado = reader.GetInt32(10)
+                    };
+                    historial.Add(boletaActual);
+                    boletaIdAnterior = boletaId;
+                }
+                var detalle = new DetalleCompraDTO
+                {
+                    Cantidad = reader.GetInt32(5),
+                    PrecioUnitario = reader.GetDecimal(6),
+                    Subtotal = reader.GetDecimal(7),
+                    NombreProducto = reader.GetString(8)
+                };
+                boletaActual?.Detalles.Add(detalle);
+            }
+            connection.Close();
             return historial;
         }
     }

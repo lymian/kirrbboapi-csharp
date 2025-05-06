@@ -6,6 +6,10 @@ namespace apikirbbo.DTOs
     {
         [Required]
         public List<CompraDetalleDTO> Detalles { get; set; } = new();
+
+        //direccion de envio, en la base de datos el tipo para este campo es TEXT
+        [Required]
+        public string Direccion { get; set; } = string.Empty;
     }
 
     public class CompraDetalleDTO

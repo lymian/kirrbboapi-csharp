@@ -8,6 +8,8 @@
         public DateTime FechaEmision { get; set; }
         public decimal Total { get; set; }
         public List<DetalleCompraDTO> Detalles { get; set; } = new();
+        public string Direccion { get; set; } = string.Empty;
+        public int Estado { get; set; }
     }
 
     public class DetalleCompraDTO

@@ -71,6 +71,8 @@ namespace apikirbbo.Repositories
                 bool exito = (bool)resultadoParam.Value;
                 string mensaje = mensajeParam.Value?.ToString() ?? "";
 
+                connection.Close();
+
                 return (exito, mensaje);
             }
             catch (Exception ex)

@@ -67,6 +67,18 @@
         }
       }
     },
+    "/kirbbo/auth/rol": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/kirbbo/categorias": {
       "get": {
         "tags": [
@@ -578,7 +590,8 @@
       },
       "CompraRequest": {
         "required": [
-          "detalles"
+          "detalles",
+          "direccion"
         ],
         "type": "object",
         "properties": {
@@ -587,6 +600,10 @@
             "items": {
               "$ref": "#/components/schemas/CompraDetalleDTO"
             }
+          },
+          "direccion": {
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false

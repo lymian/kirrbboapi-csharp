@@ -5,6 +5,7 @@ using apikirbbo.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 
 namespace apikirbbo.Controllers
@@ -77,5 +78,70 @@ namespace apikirbbo.Controllers
             return Ok(historial);
         }
 
+        [HttpPut("pedidos/actualizar-estado/{idPedido}")]
+        public IActionResult ActualizarEstadoPedido(int idPedido, [FromBody] ActualizarEstadoRequest request)
+        {
+            // Validar que el estado sea válido (por ejemplo, 0 o 1)
+            if (request.Estado != 0 && request.Estado != 1)
+            {
+                return BadRequest(new { mensaje = "El estado proporcionado no es válido. Debe ser 0 (pendiente) o 1 (completado)." });
+            }
+
+            try
+            {
+                var resultado = _compraRepository.ActualizarEstadoBoleta(idPedido, request.Estado);
+                if (resultado == "Estado de la boleta actualizado con éxito.")
+                {
+                    return Ok(new { mensaje = resultado });
+                }
+                return BadRequest(new { mensaje = resultado });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al actualizar el estado del pedido: {ex.Message}");
+                return StatusCode(500, new { mensaje = "Ocurrió un error interno al actualizar el estado del pedido." });
+            }
+        }
+        [HttpGet("pedidos/{estado}")]
+        public IActionResult ObtenerPedidosPorEstado(int estado)
+        {
+            var pedidos = _compraRepository.ObtenerBoletasPorEstado(estado);
+            if (pedidos == null || !pedidos.Any())
+            {
+                return NotFound(new { mensaje = "No se encontraron pedidos con el estado especificado." });
+            }
+            return Ok(pedidos);
+        }
+        //Obtener un pedido por id
+        [HttpGet("pedidos/detalle/{idPedido}")]
+        public IActionResult ObtenerPedidoPorId(int idPedido)
+        {
+            try
+            {
+                var pedido = _compraRepository.ObtenerBoletaPorId(idPedido);
+
+                if (pedido == null)
+                {
+                    return NotFound(new { mensaje = "No se encontró el pedido con el ID especificado." });
+                }
+
+                return Ok(pedido);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al obtener el pedido: {ex.Message}");
+                return StatusCode(500, new { mensaje = "Ocurrió un error interno al obtener el pedido." });
+            }
+        }
+        [HttpGet("pedidos/cliente/{idCliente}")]
+        public IActionResult ObtenerPedidosPorCliente(int idCliente)
+        {
+            var pedidos = _compraRepository.ObtenerHistorialDeCompras(idCliente);
+            if (pedidos == null || !pedidos.Any())
+            {
+                return NotFound(new { mensaje = "No se encontraron pedidos para el cliente especificado." });
+            }
+            return Ok(pedidos);
+        }
     }
 }

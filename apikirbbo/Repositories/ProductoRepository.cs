@@ -188,7 +188,8 @@ namespace apikirbbo.Repositories
             }
             catch (Exception ex)
             {
-                mensaje = $"Error al eliminar producto: {ex.Message}";
+                Console.WriteLine($"Error al eliminar producto: {ex.Message}");
+                mensaje = "No se puede eliminar el producto porque tiene ventas asociadas";
             }
             return mensaje;
         }

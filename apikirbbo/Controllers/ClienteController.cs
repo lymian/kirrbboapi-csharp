@@ -44,5 +44,43 @@ namespace apikirbbo.Controllers
             Cliente? cliente = _clienteService.ObtenerClientePorIdUsuario(userId);
             return Ok(cliente);
         }
+        [HttpGet("listar")]
+        public IActionResult ListarClientes()
+        {
+            try
+            {
+                var clientes = _clienteService.ObtenerListaDeClientes();
+                if (clientes == null || !clientes.Any())
+                {
+                    return NotFound(new { mensaje = "No se encontraron clientes." });
+                }
+                return Ok(clientes);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al listar clientes: {ex.Message}");
+                return StatusCode(500, new { mensaje = "Ocurrió un error interno al listar los clientes." });
+            }
+        }
+        //obtener cliente por id
+        [HttpGet("detalles/{id}")]
+        public IActionResult ObtenerClientePorIdDTO(int id)
+        {
+            try
+            {
+                var cliente = _clienteService.ObtenerClientePorIdDTO(id);
+                if (cliente == null)
+                {
+                    return NotFound(new { mensaje = "Cliente no encontrado" });
+                }
+                return Ok(cliente);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al obtener el cliente por ID: {ex.Message}");
+                return StatusCode(500, new { mensaje = "Ocurrió un error interno al obtener el cliente." });
+            }
+        }
+
     }
 }

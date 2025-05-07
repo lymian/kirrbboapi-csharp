@@ -1,4 +1,5 @@
-﻿using apikirbbo.Models;
+﻿using apikirbbo.DTOs;
+using apikirbbo.Models;
 using apikirbbo.Repositories;
 
 namespace apikirbbo.Services
@@ -22,6 +23,14 @@ namespace apikirbbo.Services
         public Cliente? ObtenerClientePorIdUsuario(int idUsuario)
         {
             return _clienteRepository.obtenerClientePorIdUsuario(idUsuario);
+        }
+        public List<ClienteDTO> ObtenerListaDeClientes()
+        {
+            return _clienteRepository.ObtenerListaDeClientes();
+        }
+        public ClienteDTO? ObtenerClientePorIdDTO(int id)
+        {
+            return _clienteRepository.ObtenerClientePorIdDTO(id);
         }
     }
 }

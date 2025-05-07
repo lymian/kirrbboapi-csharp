@@ -60,11 +60,17 @@ namespace apikirbbo.Controllers
         [Authorize(Roles = "ADMIN")]
         public IActionResult EliminarProducto(int id)
         {
+            Console.WriteLine("Eliminando producto con id" + id);
             var mensaje = _productoService.EliminarProducto(id);
             if (mensaje == null)
             {
                 return NotFound(new { mensaje = "Producto no encontrado" });
             }
+            if (mensaje == "No se puede eliminar el producto porque tiene ventas asociadas")
+            {
+                return BadRequest(new { mensaje });
+            }
+            Console.WriteLine("Producto eliminado con éxito");
             return Ok(new { mensaje });
         }
         [HttpPut("estado/{id}")]

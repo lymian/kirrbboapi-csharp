@@ -134,6 +134,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "apikirbbo.Controllers.ClienteController",
+    "Method": "ObtenerClientePorIdDTO",
+    "RelativePath": "kirbbo/clientes/detalles/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apikirbbo.Controllers.ClienteController",
+    "Method": "ListarClientes",
+    "RelativePath": "kirbbo/clientes/listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "apikirbbo.Controllers.CompraController",
     "Method": "RealizarCompra",
     "RelativePath": "kirbbo/compra",
@@ -167,6 +193,75 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apikirbbo.Controllers.CompraController",
+    "Method": "ObtenerPedidosPorEstado",
+    "RelativePath": "kirbbo/compra/pedidos/{estado}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "estado",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apikirbbo.Controllers.CompraController",
+    "Method": "ActualizarEstadoPedido",
+    "RelativePath": "kirbbo/compra/pedidos/actualizar-estado/{idPedido}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idPedido",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "apikirbbo.DTOs.ActualizarEstadoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apikirbbo.Controllers.CompraController",
+    "Method": "ObtenerPedidosPorCliente",
+    "RelativePath": "kirbbo/compra/pedidos/cliente/{idCliente}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCliente",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apikirbbo.Controllers.CompraController",
+    "Method": "ObtenerPedidoPorId",
+    "RelativePath": "kirbbo/compra/pedidos/detalle/{idPedido}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idPedido",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

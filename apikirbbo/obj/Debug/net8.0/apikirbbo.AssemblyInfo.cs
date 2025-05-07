@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("apikirbbo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a8c67f17c7ff94eb03c3a4f5dfba44f6d888131")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b74d91c1be4ef56e61a9af11c593412b7cc364ce")]
 [assembly: System.Reflection.AssemblyProductAttribute("apikirbbo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("apikirbbo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

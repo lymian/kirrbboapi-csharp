@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\apikirbbo.csproj": {}
+    "C:\\Users\\snake\\Desktop\\net\\apikirbbo\\apikirbbo\\apikirbbo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\apikirbbo.csproj": {
+    "C:\\Users\\snake\\Desktop\\net\\apikirbbo\\apikirbbo\\apikirbbo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\apikirbbo.csproj",
+        "projectUniqueName": "C:\\Users\\snake\\Desktop\\net\\apikirbbo\\apikirbbo\\apikirbbo.csproj",
         "projectName": "apikirbbo",
-        "projectPath": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\apikirbbo.csproj",
+        "projectPath": "C:\\Users\\snake\\Desktop\\net\\apikirbbo\\apikirbbo\\apikirbbo.csproj",
         "packagesPath": "C:\\Users\\snake\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\snake\\Desktop\\net core\\apikirbbo\\apikirbbo\\obj\\",
+        "outputPath": "C:\\Users\\snake\\Desktop\\net\\apikirbbo\\apikirbbo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
